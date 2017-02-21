@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
 	vector<vector<int>> permute(vector<int>& nums) {
-		sort(nums);
+		//sort(nums);
 		vector<vector<int>> set;
 		find_all_comb(nums, 0, set);
 		return set;
