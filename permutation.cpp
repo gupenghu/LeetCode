@@ -9,7 +9,16 @@ public:
 		find_all_comb(nums, 0, set);
 		return set;
 	}
-
+	bool is_swap(vector<int>& nums, int begin){
+		for (int i = begin; i < nums.size() - 1; ++i)
+		{
+			if (nums[begin] == nums[begin + 1])
+			{
+				return false;
+			}
+		}
+		return true
+	}
 
 	void find_all_comb(vector<int>& nums, int begin, vector<vector<int>> &set) {
 		if (begin == nums.size() - 1){
@@ -18,7 +27,13 @@ public:
 
 		for (size_t i = begin; i < nums.size(); i++)
 		{
-			if (i + 1 < nums.size() && nums[i] == nums[i + 1])
+			// if (i + 1 < nums.size() && nums[i] == nums[i + 1])
+			// {
+			// 	continue;
+			// }
+			
+			
+			if (!is_swap(nums,i))
 			{
 				continue;
 			}
